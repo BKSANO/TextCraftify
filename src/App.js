@@ -56,7 +56,7 @@ function App() {
                   mode={mode}
                   showAlert={showAlertCalled}
                 />
-              }
+            }
             />
             <Route
               exact path="/about"
@@ -64,7 +64,7 @@ function App() {
                 <About mode={mode} toggleMode={toggleModeClick} />
               }
             />
-          </Routes>
+          </Routes> 
         </div>
       </BrowserRouter>
     </>
