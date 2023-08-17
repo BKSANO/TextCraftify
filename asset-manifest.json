@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/TextCraftify/static/css/main.2784506f.css",
+    "main.js": "/TextCraftify/static/js/main.1aed0bb3.js",
+    "static/js/787.0cbdef75.chunk.js": "/TextCraftify/static/js/787.0cbdef75.chunk.js",
+    "index.html": "/TextCraftify/index.html",
+    "main.2784506f.css.map": "/TextCraftify/static/css/main.2784506f.css.map",
+    "main.1aed0bb3.js.map": "/TextCraftify/static/js/main.1aed0bb3.js.map",
+    "787.0cbdef75.chunk.js.map": "/TextCraftify/static/js/787.0cbdef75.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2784506f.css",
+    "static/js/main.1aed0bb3.js"
+  ]
+}
