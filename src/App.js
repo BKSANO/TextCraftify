@@ -38,7 +38,7 @@ function App() {
     <>
       <BrowserRouter>
         <Navbar
-          title="TextUtils"
+          title={'TextCraftify'}
           home={"Home"}
           about={"About"}
           contact={"Contact"}
@@ -52,7 +52,7 @@ function App() {
               exact path="/"
               element={
                 <TextForm
-                  heading={"Enter Text to Analyse below"}
+                  heading={"Try TextCraftify - Word Counter, Charecter Counter, Remove Extra Spaces"}
                   mode={mode}
                   showAlert={showAlertCalled}
                 />
