@@ -53,7 +53,7 @@ function App() {
               exact path="/"
               element={
                 <TextForm
-                  heading={"Try TextCraftify - Word Counter, Charecter Counter, Remove Extra Spaces"}
+                  heading={"Try TextCraftify - Word Counter, Character Counter, Remove Extra Spaces"}
                   mode={mode}
                   showAlert={showAlertCalled}
                 />

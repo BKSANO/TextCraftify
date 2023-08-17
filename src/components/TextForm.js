@@ -27,8 +27,6 @@ export default function TextForm(props) {
   }
 
   const handleCopyClick = () => {
-    // let boxText=document.getElementById("myBox");
-    // text.select();
     navigator.clipboard.writeText(text);
     props.showAlert("Text Copied","success")
   }
@@ -41,6 +39,45 @@ export default function TextForm(props) {
     setText("");
     props.showAlert("Text Cleared","success")
   }
+
+  const handleVowelConsonant = () =>{
+    let countVowel=0;
+    for (let index = 0; index <= text.length; index++) {
+      if (text.charAt(index).match(/[aeiouAEIOU]/)) {
+        countVowel++;
+      }
+    }
+
+    let countConst=0
+    for (let index = 0; index <= text.length; index++) {
+      if (
+        text
+          .charAt(index)
+          .match(/[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]/)
+      ) {
+        countConst++;
+      }
+    }
+    props.showAlert(`Text has ${countVowel} Vowels and ${countConst} Consonants`,"primary")
+  }
+
+
+  const handleSentenceCase = () => {
+    let lowerCase = text.toLowerCase();
+    let regex = /([^.!?]+[!?.\d\s]+)/g;
+    let sentences = lowerCase.match(regex);
+    if(sentences!=null && sentences.length>=1){
+      let newText = sentences
+      .map((sentence) => {
+        return (sentence.charAt(0) >= "a" && sentence.charAt(0) <= "z"
+          ? sentence.charAt(0).toUpperCase() + sentence.slice(1)
+          : sentence);
+      })
+      .join("");
+    setText(newText);
+    }
+
+  };
 
   return (
     <div style={{color : props.mode==='dark'?'white':'black'}}>
@@ -64,13 +101,16 @@ export default function TextForm(props) {
           <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleCopyClick}>Copy Text</button>
           <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
           <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleClearText}>Clear</button>
+          <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleSentenceCase}>Sentence Case</button>
+          <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleVowelConsonant}>Count Vowel & Consonant</button>
+         
          </div>
         </div>
       </div>
       <div className="container my-3">
         <h2>Your Text Summary</h2>
-        <p>{text.split(/\s/).filter((element)=>{return element.length!==0}).length} words and {text.length} characters</p>
-        <p>{text.split(" ").filter((element)=>{return element.length!==0}).length * .008} Minutes reads</p>
+        <p>Your content has {text.split(/[.?!]\s/).filter((element)=>{return element.length!==0}).length} sentence, {text.split(/\r\n|\r|\n/).filter((element)=>{return element.length!==0}).length} paragraph, {text.split(/\s/).filter((element)=>{return element.length!==0}).length} words and {text.length} characters,
+        And it needs {text.split(" ").filter((element)=>{return element.length!==0}).length * .01} Minutes to reads.</p>
         <h2>Preview</h2>
         <p>{text.length>0?text:"Nothing to preview!"}</p>
       </div>

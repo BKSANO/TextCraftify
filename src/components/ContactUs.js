@@ -32,19 +32,19 @@ const ContactUs = (props) => {
           <label className="form-label" htmlFor="name">
             Name
           </label>
-          <input className="form-control" type="text" id="name" onChange={(e) => setName(e.target.value)} required />
+          <input className="form-control" style={myStyle} type="text" id="name" onChange={(e) => setName(e.target.value)} required />
         </div>
         <div className="mb-3">
           <label className="form-label" htmlFor="email">
             Email
           </label>
-          <input className="form-control" type="email" id="email" onChange={(e) => setEmail(e.target.value)}  required />
+          <input className="form-control" style={myStyle} type="email" id="email" onChange={(e) => setEmail(e.target.value)}  required />
         </div>
         <div className="mb-3">
           <label className="form-label" htmlFor="message">
             Message
           </label>
-          <textarea className="form-control" id="message" onChange={(e) => setMessage(e.target.value)}  required />
+          <textarea className="form-control" style={myStyle} rows="8" id="message" onChange={(e) => setMessage(e.target.value)}  required />
         </div>
         <button disabled={name.length===0 && email.length===0 && message.length===0} className="btn btn-primary" type="submit">
           {formStatus}
