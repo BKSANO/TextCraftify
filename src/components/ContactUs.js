@@ -25,7 +25,7 @@ const ContactUs = (props) => {
 
   }
   return (
-    <div className="container mt-5" style={myStyle}>
+    <div className="container" style={myStyle}>
       <h2 className="mb-3">Contact Form</h2>
       <form onSubmit={onSubmit}>
         <div className="mb-3">
