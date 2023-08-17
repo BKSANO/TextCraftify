@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import About from "./components/About";
+import ContactUs from "./components/ContactUs";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import Alert from "./components/Alert";
@@ -17,7 +18,7 @@ function App() {
     });
     setTimeout(() => {
       setAlert(null);
-    }, 1500);
+    }, 2000);
   };
 
   const toggleModeClick = () => {
@@ -61,7 +62,13 @@ function App() {
             <Route
               exact path="/about"
               element={
-                <About mode={mode} toggleMode={toggleModeClick} />
+                <About mode={mode}/>
+              }
+            />
+             <Route
+              exact path="/contact"
+              element={
+               <ContactUs mode={mode} showAlert={showAlertCalled}/>
               }
             />
           </Routes> 
