@@ -93,17 +93,14 @@ export default function TextForm(props) {
             style={{backgroundColor : props.mode==='dark'?'#333333':'white', color : props.mode==='dark'?'white':'black'}}
           />
          <div className="container my-3">
-         <button disabled={text.length===0} className="btn btn-primary mx-1" onClick={handleUpClick}>
-            Convert to Uppercase
-          </button>
+          <button disabled={text.length===0} className="btn btn-primary mx-1" onClick={handleUpClick}>Convert to Uppercase</button>
           <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleLowClick}>Convert to Lowercase</button>
+          <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleSentenceCase}>Sentence Case</button>
           <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleSpeakClick}>Speak</button>
           <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleCopyClick}>Copy Text</button>
           <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleExtraSpaces}>Remove Extra Spaces</button>
           <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleClearText}>Clear</button>
-          <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleSentenceCase}>Sentence Case</button>
           <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={handleVowelConsonant}>Count Vowel & Consonant</button>
-         
          </div>
         </div>
       </div>
